@@ -213,6 +213,13 @@ menu .list-project a {
     margin-bottom: .5em;
 }
 
+.search {
+    width: 890px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
 audio {
     float: right;
     width: 70%;
