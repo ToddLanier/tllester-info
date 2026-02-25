@@ -244,12 +244,20 @@ body.fd-mode {
     background-color: #cbe5ff;
 }
 
+body.fd-mode menu {
+    border: 1px solid;
+}
+
 body.lanch-mode {
     background-color: #382f89;
 }
 
 body.lanch-mode header *, body.lanch-mode footer{
     color: white;
+}
+
+body.lanch-mode menu {
+    border: 1px solid;
 }
 
 body.luv-mode {
@@ -260,12 +268,27 @@ body.luv-mode header *, body.luv-mode footer{
     color: white;
 }
 
+body.luv-mode menu {
+    border: 1px solid;
+}
+
 body.fs-mode {
     background-color: #4ca285;
 }
 
+
+body.fs-mode menu {
+    border: 1px solid;
+}
+
+
 body.maw-mode {
     background-color: #4ab4e7;
+}
+
+
+body.maw-mode menu {
+    border: 1px solid;
 }
 
 /* EMK */
