@@ -265,15 +265,11 @@ body.luv-mode .content img {
 }
 
 body.fs-mode {
-    background-image: url('bg/background-fs.svg');
-    background-size: cover;
-    background-position: center;
+    background-color: #4ca285;
 }
 
 body.maw-mode {
     background-color: #4ab4e7;
-    background-size: cover;
-    background-position: center;
 }
 
 /* EMK */
