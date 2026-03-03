@@ -1,73 +1,58 @@
 {{ define "main" }}
+
 <menu>
 
-        <div class="page">
-            {{ with .GetPage "info" }}
-            <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-            {{ end }}
-            <a href="https://elmejorkarate.substack.com/" target="_blank" rel="noopener noreferrer">emk sub</a>
-        </div>
+    <div class="page">
+        {{ with .GetPage "info" }}
+        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+        {{ end }}
+        <a href="https://elmejorkarate.substack.com/" target="_blank" rel="noopener noreferrer">emk sub</a>
+    </div>
 
-        <div class="list-summary">
-
-            {{ with .GetPage "summary" }}
-            <div>{{ .Content }}</div>
-            {{ end }}
-            {{/*  {{ range (sort .Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
-                <div class="post">
-                    {{ $pageURL := .Permalink }}
-
-                    {{ if .Params.external_url }}
-                    {{ $pageURL = .Params.external_url }}
-                    <a href="{{ $pageURL }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
-
-                    {{ else if .Params.file.src }}
-                    {{ $pageURL = .Params.file.src }}
-                    <a href="{{ $pageURL }}" title="{{ .Title }}">{{ .Title }}</a>
-
-                    {{ else if .Params.file.image }}
-                    {{ $pageURL = .Params.file.image }}
-                    <a href="{{ $pageURL }}" title="{{ .Title }}">{{ .Title }}</a>
-
-                    {{ else }}
-                    <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-
-                    {{ end }}
-                </div>
-            {{ end }}  */}}
-        </div>
+    <div class="list-summary">
+        {{ with .GetPage "summary" }}
+        <div>{{ .Content }}</div>
+        {{ end }}
+    </div>
 
     <div class="list-project">
         {{ with .Site.GetPage "/projects" }}
         {{ range first 10 (sort .Pages "Date" "asc" (where .Pages ".Params.private" "!=" true))}}
-
         <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-
         {{ end }}
         {{ end }}
     </div>
 </menu>
 
-    <div class="content">
-        {{/*  <h1>{{ .Page.Title }}</h1>  */}}
-        {{ if .Params.image.src }}
+<div class="project-content">
+    <h1>{{ .Title }}</h1>
+            <div class="list-summary">
+            {{ $filtered := where .Pages "Params.private" "!=" true }}
+            {{ range sort $filtered "Date" "desc" }}
+            <div class="post">
+                        {{ $pageURL := .Permalink }}
 
-        {{ $path := "" }}
-  {{ with .File }}
-        {{ $path = .Path }}
-  {{ else }}
-        {{ $path = .Path }}
-  {{ end }}
+                        {{ if .Params.external_url }}
+                        {{ $pageURL = .Params.external_url }}
+                        <a href="{{ $pageURL }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
 
+                        {{ else if .Params.file.src }}
+                        {{ $pageURL = .Params.file.src }}
+                        <a href="{{ $pageURL }}" title="{{ .Title }}">{{ .Title }}</a>
 
- 
-            <div class="{{ path.Base (path.Split $path).Dir }}">
-                 <img src="{{ .Params.image.src }}" alt="{{ .Page.Title }} - Logo" >
-            </div>
+                        {{ else if .Params.file.image }}
+                        {{ $pageURL = .Params.file.image }}
+                        <a href="{{ $pageURL }}" title="{{ .Title }}">{{ .Title }}</a>
 
-          
+                        {{ else }}
+                        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
 
-        {{ end }}
-        {{ .Content }}
-    </div>
+                        {{ end }}
+
+                    </div>
+                {{ end }}
+        </div>
+    {{ .Content }}
+</div>
+
 {{ end }}
