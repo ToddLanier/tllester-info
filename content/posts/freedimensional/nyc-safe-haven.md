@@ -1,8 +1,7 @@
 ---
 title: nyc safe haven
-order: 06
+order: 05
 image:
-  src: the one you'll make from whatsapp note/image
-external_url: the one you'll make (sub micro-site?)
+  src: /uploads/nyc-artist-safe-haven.jpg
+external_url: https://nyc.artistsafety.net/
 ---
-

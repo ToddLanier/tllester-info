@@ -1,8 +1,7 @@
 ---
 title: as . net
-order: 08
+order: 07
 image:
-  src: artist safety . net logo
-external_url: revised micro site / original look
+  src: /uploads/ASN_2.png
+external_url: https://fd.tllester.info/artistsafety/
 ---
-

@@ -1,8 +1,7 @@
 ---
 title: fd story
-order: 02
+order: 01
 image:
-  src: 
-external_url: you make
+  src: /uploads/fd-story.png
+external_url: https://fd.artistsafety.net/wp-content/uploads/2010/10/fDbrochure.pdf
 ---
-

@@ -216,6 +216,9 @@ menu .list-project a {
     flex-wrap: nowrap;
     text-align: center;
     justify-content: center;
+      background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .content ol li {

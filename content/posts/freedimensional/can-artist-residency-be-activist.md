@@ -1,8 +1,8 @@
 ---
 title: can artist residency be activist?
-order: 12
+order: 011
 image:
-  src: https://www.youtube.com/watch?v=_mLPxYzpVcY
+  src: /uploads/can-artistresidency-be-activist.png
 external_url: https://www.youtube.com/watch?v=_mLPxYzpVcY
 ---
 

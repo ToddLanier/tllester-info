@@ -1,7 +1,7 @@
 ---
-order: 04  
 title: mapping residencies 
+order: 03
 image: 
-  src: thumbnail of yellow cover .. need yellow here
-external_url: you make link from document we discussed the other day (in your email)
+  src: /uploads/mapping-residencies.png
+external_url: https://insituculture.eu/croatia-2024/summer-school-place-based-creative-solutions/
 ---

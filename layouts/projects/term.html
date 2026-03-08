@@ -1,38 +1,38 @@
 {{ define "main" }}
 
-    {{- partial "menu-project.html" . -}}
+{{- partial "menu-project.html" . -}}
 
 <div class="project-content">
-            <div class="project-boxes">
-            {{ $projectName := path.Base .RelPermalink }}
-            {{ $sectionDir := printf "posts/%s/" $projectName }}
-            {{ $sectionPages := where site.RegularPages "File.Dir" $sectionDir }}
-            {{ $filtered := where $sectionPages "Params.private" "!=" true }}
-            {{ range sort $filtered "Params.order" "asc" }}
-            <div class="project-box">
-                        {{ $pageURL := .Permalink }}
-
-                        {{ if .Params.external_url }}
-                        {{ $pageURL = .Params.external_url }}
-                        <a href="{{ $pageURL }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
-
-                        {{ else if .Params.file.src }}
-                        {{ $pageURL = .Params.file.src }}
-                        <a href="{{ $pageURL }}" title="{{ .Title }}">{{ .Title }}</a>
-
-                        {{ else if .Params.file.image }}
-                        {{ $pageURL = .Params.file.image }}
-                        <a href="{{ $pageURL }}" title="{{ .Title }}">{{ .Title }}</a>
-
-                        {{ else }}
-                        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-
-                        {{ end }}
-
-                    </div>
-                {{ end }}
-        </div>
-    {{ .Content }}
+    <div class="project-boxes">
+        {{ $projectName := path.Base .RelPermalink }}
+        {{ $sectionDir := printf "posts/%s/" $projectName }}
+        {{ $sectionPages := where site.RegularPages "File.Dir" $sectionDir }}
+        {{ $filtered := where $sectionPages "Params.private" "!=" true }}
+        {{ range sort $filtered "Params.order" "asc" }}
+            {{ $pageURL := .Permalink }}
+            {{ if .Params.external_url }}
+                {{ $pageURL = .Params.external_url }}
+                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}" target="_blank" rel="noopener noreferrer" title="{{ .Title }}"> 
+                        <div></div>
+                    </a>
+            {{ else if .Params.file.src }}
+                {{ $pageURL = .Params.file.src }}
+                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}" title="{{ .Title }}">
+                             <div></div>
+                    </a>
+            {{ else if .Params.file.image }}
+                {{ $pageURL = .Params.file.image }}
+                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}" title="{{ .Title }}">
+                            <div></div>
+                    </a>
+            {{ else }}
+                <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ .Permalink }}" title="{{ .Title }}">
+                         <div></div>
+                </a>
+            {{ end }}
+        {{ end }}
+    </div>
+{{ .Content }}
 </div>
 
 {{ end }}
