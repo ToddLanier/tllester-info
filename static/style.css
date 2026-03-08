@@ -32,7 +32,7 @@ body {
     height: 720px;
 }
 
-header{
+header {
     width: 100%;
     margin: 0 0 1em 0;
 }
@@ -199,6 +199,25 @@ menu .list-project a {
     overflow-y: auto;
 }
 
+.project-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.project-box {
+    border: 1px solid;
+    width: 30%;
+    height: 10em;
+    margin: .5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+}
+
 .content ol li {
     margin-bottom: .5em;
 }
@@ -272,7 +291,8 @@ body.lanch-mode {
     background-color: #382f89;
 }
 
-body.lanch-mode header *, body.lanch-mode footer{
+body.lanch-mode header *,
+body.lanch-mode footer {
     color: white;
 }
 
@@ -284,7 +304,8 @@ body.luv-mode {
     background-color: #cf2e2e;
 }
 
-body.luv-mode header *, body.luv-mode footer{
+body.luv-mode header *,
+body.luv-mode footer {
     color: white;
 }
 
@@ -320,7 +341,7 @@ body.emk-mode {
 }
 
 body.emk-mode menu,
-body.emk-mode .content {
+body.emk-mode .project-content {
     background-color: rgb(45, 45, 45);
     color: #f5f5f5;
 }
@@ -337,4 +358,3 @@ body.emk-mode a:visited {
 body.emk-mode a:hover {
     color: #f5f5f5;
 }
-

@@ -1,0 +1,23 @@
+<menu>
+
+    <div class="page">
+        {{ with .GetPage "info" }}
+        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+        {{ end }}
+        <a href="https://elmejorkarate.substack.com/" target="_blank" rel="noopener noreferrer">emk sub</a>
+    </div>
+
+    <div class="list-summary">
+        {{ with .GetPage "summary" }}
+        <div>{{ .Content }}</div>
+        {{ end }}
+    </div>
+
+    <div class="list-project">
+        {{ with .Site.GetPage "/projects" }}
+        {{ range first 10 (sort .Pages "Date" "asc" (where .Pages ".Params.private" "!=" true))}}
+        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+        {{ end }}
+        {{ end }}
+    </div>
+</menu>

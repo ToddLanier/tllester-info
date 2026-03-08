@@ -1,35 +1,16 @@
 {{ define "main" }}
 
-<menu>
-
-    <div class="page">
-        {{ with .GetPage "info" }}
-        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-        {{ end }}
-        <a href="https://elmejorkarate.substack.com/" target="_blank" rel="noopener noreferrer">emk sub</a>
-    </div>
-
-    <div class="list-summary">
-        {{ with .GetPage "summary" }}
-        <div>{{ .Content }}</div>
-        {{ end }}
-    </div>
-
-    <div class="list-project">
-        {{ with .Site.GetPage "/projects" }}
-        {{ range first 10 (sort .Pages "Date" "asc" (where .Pages ".Params.private" "!=" true))}}
-        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-        {{ end }}
-        {{ end }}
-    </div>
-</menu>
+    {{- partial "menu-project.html" . -}}
 
 <div class="project-content">
     <h1>{{ .Title }}</h1>
-            <div class="list-summary">
-            {{ $filtered := where .Pages "Params.private" "!=" true }}
-            {{ range sort $filtered "Date" "desc" }}
-            <div class="post">
+            <div class="project-boxes">
+            {{ $projectName := path.Base .RelPermalink }}
+            {{ $sectionDir := printf "posts/%s/" $projectName }}
+            {{ $sectionPages := where site.RegularPages "File.Dir" $sectionDir }}
+            {{ $filtered := where $sectionPages "Params.private" "!=" true }}
+            {{ range sort $filtered "Params.order" "asc" }}
+            <div class="project-box">
                         {{ $pageURL := .Permalink }}
 
                         {{ if .Params.external_url }}

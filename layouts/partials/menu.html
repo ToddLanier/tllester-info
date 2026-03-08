@@ -9,7 +9,7 @@
         </div>
         <div class="list-summary">
             {{ with .Site.GetPage "/posts" }}
-                {{ range (sort .Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
+                {{ range sort (where (where .Pages ".Params.private" "!=" true) ".Params.home-sidebar" true) "Date" "desc" }}
                     <div class="post">
                         {{ $pageURL := .Permalink }}
 
