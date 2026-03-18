@@ -2,7 +2,7 @@
 title: on the move report
 order: 8
 image:
-  src: /uploads/Aids_Sem_Capa.png 
-external_url: https://tllester.info/uploads/At-risk_Vol3_Chapter8.pdf
+  src: /uploads/09-atriskv3.png
+external_url: /uploads/At-risk_Vol3_Chapter8.pdf
 ---
 
