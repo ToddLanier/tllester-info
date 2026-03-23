@@ -117,17 +117,13 @@ menu .list-summary p {
     text-align: justify;
 }
 
-
 menu .list-summary a {
     margin-bottom: .5em;
+     text-decoration: underline;
 }
 
 menu .list-summary .post {
     margin-bottom: 1.3em;
-}
-
-menu .list-summary a {
-    text-decoration: underline;
 }
 
 menu .list-project {
