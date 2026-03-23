@@ -195,7 +195,7 @@ menu .list-project a {
 .project-boxes {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-content: space-around;
 }
 
