@@ -2,6 +2,6 @@
 title: fs
 order: 1
 image:
-  src: /uploads/fs infinity loop logo
+  src: /uploads/
 external_url:
 ---
