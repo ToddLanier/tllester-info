@@ -2,6 +2,6 @@
 title: Publication Studio 
 order: 11
 image:
-  src: /uploads
-external_url: 
+  src: /uploads/11-lanchonete-pssp.png
+external_url: https://lanchonete.tllester.info/lanchonete/pdfs/publication-studio-sao-paolo.pdf
 ---
