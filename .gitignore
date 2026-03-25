@@ -12,3 +12,8 @@ node_modules/
 public/
 resources/
 static/pagefind/
+
+claude.md
+.claude/
+
+**/.obsidian/
