@@ -31,6 +31,7 @@
     {{- partial "head.html" . -}}
 </head>
 <body>
+    <div class="menu-overlay"></div>
     {{- partial "header.html" . -}}
         <main>
             {{ block "main" . }}
@@ -40,27 +41,58 @@
 </body>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
+            const p = window.location.pathname;
             const bodyElement = document.body;
-                if (currentPath === '/') {
-                    bodyElement.classList.toggle('home');
-                    } else if (currentPath === '/info/' ) {
-                    bodyElement.classList.toggle('info-mode');
-                    } else if (currentPath === '/contact/') {
-                    bodyElement.classList.toggle('contact-mode');
-                    } else if (currentPath === '/projects/el-mejor-karate/') {
-                    bodyElement.classList.toggle('emk-mode');
-                    } else if (currentPath === '/projects/freedimensional/') {
-                    bodyElement.classList.toggle('fd-mode');
-                    } else if (currentPath === '/projects/lanchonete/') {
-                    bodyElement.classList.toggle('lanch-mode');
-                    } else if (currentPath === '/projects/luv-til-it-hurts/') {
-                    bodyElement.classList.toggle('luv-mode');
-                    } else if (currentPath === '/projects/farm-school/') {
-                    bodyElement.classList.toggle('fs-mode');
-                    } else if (currentPath === '/projects/my-art-world/') {
-                    bodyElement.classList.toggle('maw-mode');
-                    } 
+
+            // Extract the project slug from paths like /projects/slug/ or /posts/slug/anything/
+            const projectMatch = p.match(/^\/(projects|posts)\/([^/]+)\//);
+            const projectSlug = projectMatch ? projectMatch[2] : null;
+
+            const projectModes = {
+                'el-mejor-karate': 'emk-mode',
+                'freedimensional': 'fd-mode',
+                'lanchonete': 'lanch-mode',
+                'luv-til-it-hurts': 'luv-mode',
+                'farm-school': 'fs-mode',
+                'my-art-world': 'maw-mode'
+            };
+
+            if (p === '/') {
+                bodyElement.classList.add('home');
+            } else if (p === '/info/') {
+                bodyElement.classList.add('info-mode');
+            } else if (p === '/contact/') {
+                bodyElement.classList.add('contact-mode');
+            } else if (projectSlug && projectModes[projectSlug]) {
+                bodyElement.classList.add(projectModes[projectSlug]);
+            }
+
+            // Hamburger menu toggle
+            var toggle = document.querySelector('.menu-toggle');
+            var overlay = document.querySelector('.menu-overlay');
+            var menuEl = document.querySelector('menu');
+
+            function openMenu() {
+                bodyElement.classList.add('menu-open');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                bodyElement.classList.remove('menu-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+
+            if (toggle && menuEl) {
+                toggle.addEventListener('click', function() {
+                    if (bodyElement.classList.contains('menu-open')) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
                 });
+            }
+            if (overlay) {
+                overlay.addEventListener('click', closeMenu);
+            }
+        });
     </script>
 </html>
