@@ -47,7 +47,7 @@ a:visited {
 main {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 720px;
 }
 
@@ -183,13 +183,11 @@ menu .list-project a {
 }
 
 .project-content {
-    width: 890px;
+    width: 900px;
     font-size: 18px;
-    background-color: white;
-    border: 1px solid;
-    padding: 25px 35px;
     margin-left: 2em;
-    overflow-y: auto;
+        overflow-y: auto;
+
 }
 
 .project-boxes {
@@ -201,17 +199,18 @@ menu .list-project a {
 
 .project-box {
     border: 1px solid;
-    width: 30%;
+    width: 29%;
     height: 10em;
-    margin: .5em;
+    margin: 0 1.5em 1.7em 0;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     text-align: center;
     justify-content: center;
-      background-repeat: no-repeat;
-  background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: auto;
+    background-color: white;
 }
 
 .project-box--multilingual {
@@ -268,8 +267,6 @@ audio {
     width: 70%;
     height: 120px;
 }
-
-
 
 /* CONTACT */
 
@@ -470,6 +467,7 @@ body.home menu {
     border-right: 1px solid;
 }
 
+/* INFO  */
 body.info-mode {
     background-color: #24d324;
 }
@@ -477,13 +475,13 @@ body.info-mode {
 body.info-mode menu {
     border: 1px solid;
 }
-
+/* CONTACT */
 body.contact-mode {
     background-image: url('bg/background-contact.svg');
     background-size: cover;
     background-position: center;
 }
-
+/* FD */
 body.fd-mode {
     background-color: #cbe5ff;
 }
@@ -492,6 +490,17 @@ body.fd-mode menu {
     border: 1px solid;
 }
 
+body.fd-mode .project-box__lang {
+    background-color: rgb(203 229 255 / 60%);
+    color: rgb(45, 45, 45);
+}
+
+body.fd-mode .project-box__lang:hover {
+    background-color: #4b6e90a8;
+    color: white;
+}
+
+/* LANCHONETE */
 body.lanch-mode {
     background-color: #382f89;
 }
@@ -505,6 +514,17 @@ body.lanch-mode menu {
     border: 1px solid;
 }
 
+body.lanch-mode .project-box__lang {
+    background-color: rgb(56 47 137 / 60%);
+    color: #f5f5f5;
+}
+
+body.lanch-mode .project-box__lang:hover {
+    background-color: hsl(246deg 48.91% 36.08% / 80%);
+    color: white;
+}
+
+/* LUV */
 body.luv-mode {
     background-color: #cf2e2e;
 }
@@ -518,15 +538,16 @@ body.luv-mode menu {
     border: 1px solid;
 }
 
+/*  FARM SCHOOL */
 body.fs-mode {
     background-color: #4ca285;
 }
-
 
 body.fs-mode menu {
     border: 1px solid;
 }
 
+/* MY ART WORLD */
 
 body.maw-mode {
     background-color: #4ab4e7;
@@ -535,6 +556,12 @@ body.maw-mode {
 
 body.maw-mode menu {
     border: 1px solid;
+}
+
+body.maw-mode .project-content {
+    background-color: white;
+    border: 1px solid;
+    overflow-y: auto;
 }
 
 /* EMK */
