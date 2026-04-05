@@ -578,6 +578,7 @@ body.emk-mode {
     background-image: url('bg/background-emk.webp');
     background-position-y: -10px;
     background-position-x: -128px;
+    background-color: #2d2d2d;
     color: #f5f5f5;
 }
 
