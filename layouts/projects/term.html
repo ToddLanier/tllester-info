@@ -15,8 +15,9 @@
         {{ range sort $filtered "Params.order" "asc" }}
             {{ $pageURL := .Permalink }}
             {{ if .Params.translations }}
+                    {{ $isGrid := eq (len .Params.translations) 4 }}
                     <div class="project-box project-box--multilingual" style="background-image: url('{{ .Params.image.src }}');" title="{{ .Title }}">
-                        <div class="project-box__overlay">
+                        <div class="project-box__overlay{{ if $isGrid }} project-box__overlay--grid{{ end }}">
                             {{ range .Params.translations }}
                             <a class="project-box__lang" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
                                 {{ .lang }}

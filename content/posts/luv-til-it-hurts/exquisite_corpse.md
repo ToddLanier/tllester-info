@@ -1,7 +1,7 @@
 ---
-title: exquisite corpse
+title: Exquisite Corpse traveling show
 order: 8
 image:
-  src: /uploads/
-external_url: 
+  src: /uploads/luv-exquisite-corpse.png
+external_url: https://luvhurts.co/mixed-media/exquisite-corpse/
 ---

@@ -1,5 +1,5 @@
 ---
-title: Steinvorth conference talk 
+title: "Steinvorth research: emerging cultural structures"
 order: 5
 image:
   src: /uploads/05-lanchonete-adler.png

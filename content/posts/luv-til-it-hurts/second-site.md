@@ -1,7 +1,7 @@
 ---
-title: a scrapbook of sorts 
-order: 5
+title: second site
+order: 4
 image:
   src: /uploads/luv-blog.png
-external_url: https://luvhurts.co/
+external_url: https://luvtilithurts.co/
 ---

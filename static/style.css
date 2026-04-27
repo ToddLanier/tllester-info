@@ -258,6 +258,28 @@ menu .list-project a {
     border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.project-box__overlay--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    flex-direction: initial;
+}
+
+.project-box__overlay--grid .project-box__lang {
+    flex: initial;
+    border-right: none;
+}
+
+.project-box__overlay--grid .project-box__lang:nth-child(1),
+.project-box__overlay--grid .project-box__lang:nth-child(3) {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-box__overlay--grid .project-box__lang:nth-child(1),
+.project-box__overlay--grid .project-box__lang:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .content ol li {
     margin-bottom: .5em;
 }

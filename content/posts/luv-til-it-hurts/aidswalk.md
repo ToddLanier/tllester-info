@@ -1,6 +1,6 @@
 ---
 title: AIDs Walk
-order: 9
+order: 13
 image:
   src: /uploads/
 external_url: 
