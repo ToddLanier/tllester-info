@@ -3,7 +3,5 @@ title: Operação Macabéa
 order: 11
 image:
   src: /uploads/luv-macabea.jpg
-draft: true
+external_url: https://elmejorkarate.substack.com/p/cronica-de-uma-residencia
 ---
-
-TODO: link pending per spec ("set up box, we'll link when we meet"). Thumbnail is broadsheet poster placeholder; spec requests purple ouroboros — pull manually.

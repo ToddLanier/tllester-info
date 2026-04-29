@@ -8,5 +8,5 @@ translations:
   - lang: BAC
     url: https://fd.tllester.info/pdfs/brooklynartscouncil.pdf
   - lang: NYFA
-    url: https://fd.fd.tllester.info/pdfs/nyfa.pdf
+    url: https://fd.tllester.info/pdfs/nyfa.pdf
 ---

@@ -9,7 +9,7 @@ translations:
   - lang: e-flux
     url: https://www.e-flux.com/announcements/28802/exhibitions-and-programme-announced
   - lang: Bamako
-    url: https://lanchonete.tllester.info/pdfs/lanch-22-bamako-zine.pdf
+    url: https://lanchonete.tllester.info/pdfs/Bamako-Zine.pdf
   - lang: C&
     url: https://contemporaryand.com/en/america-latina-magazine/texts/the-zimbabwean-visual-artist-lucia-nhamo
 ---
