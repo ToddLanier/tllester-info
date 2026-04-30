@@ -1,0 +1,11 @@
+{{- /* link-attrs.html
+       Returns ` target="_blank" rel="noopener noreferrer"` for external links,
+       empty for internal / tllester.info zone / non-http schemes.
+       Usage: <a href="..."{{ partial "link-attrs.html" $url | safeHTMLAttr }}> */ -}}
+{{- $url := . -}}
+{{- if or (hasPrefix $url "http://") (hasPrefix $url "https://") -}}
+{{- $host := (urls.Parse $url).Host -}}
+{{- if or (eq $host "tllester.info") (hasSuffix $host ".tllester.info") -}}
+{{- else -}} target="_blank" rel="noopener noreferrer"
+{{- end -}}
+{{- end -}}

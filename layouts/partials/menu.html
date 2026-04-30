@@ -4,7 +4,7 @@
             {{ with .GetPage "info" }}
             <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
             {{ end }}
-            <a href="https://elmejorkarate.substack.com/" target="_blank" rel="noopener noreferrer">emk sub
+            <a href="https://elmejorkarate.substack.com/"{{ partial "link-attrs.html" "https://elmejorkarate.substack.com/" | safeHTMLAttr }}>emk sub
             </a>
         </div>
         <div class="list-summary">

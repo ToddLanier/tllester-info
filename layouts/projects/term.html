@@ -19,7 +19,7 @@
                     <div class="project-box project-box--multilingual" style="background-image: url('{{ .Params.image.src }}');" title="{{ .Title }}">
                         <div class="project-box__overlay{{ if $isGrid }} project-box__overlay--grid{{ end }}">
                             {{ range .Params.translations }}
-                            <a class="project-box__lang" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+                            <a class="project-box__lang" href="{{ .url }}"{{ partial "link-attrs.html" .url | safeHTMLAttr }}>
                                 {{ .lang }}
                             </a>
                             {{ end }}
@@ -27,17 +27,17 @@
                     </div>
             {{ else if .Params.external_url }}
                 {{ $pageURL = .Params.external_url }}
-                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}" target="_blank" rel="noopener noreferrer" title="{{ .Title }}">
+                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}"{{ partial "link-attrs.html" $pageURL | safeHTMLAttr }} title="{{ .Title }}">
                         <div></div>
                     </a>
             {{ else if .Params.file.src }}
                 {{ $pageURL = .Params.file.src }}
-                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}" title="{{ .Title }}">
+                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}"{{ partial "link-attrs.html" $pageURL | safeHTMLAttr }} title="{{ .Title }}">
                              <div></div>
                     </a>
             {{ else if .Params.file.image }}
                 {{ $pageURL = .Params.file.image }}
-                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}" title="{{ .Title }}">
+                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}"{{ partial "link-attrs.html" $pageURL | safeHTMLAttr }} title="{{ .Title }}">
                             <div></div>
                     </a>
             {{ else }}
