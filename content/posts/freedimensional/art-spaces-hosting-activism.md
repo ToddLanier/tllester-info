@@ -3,7 +3,7 @@ title: Art Spaces Hosting Activism
 order: 7
 image:
   src: /uploads/fD_Final_6Octt.png 
-external_url: https://fd.tllester.info/pdfs/art-spaces-hosting-activism-en.pdf
+asset: https://fd.tllester.info/pdfs/art-spaces-hosting-activism-en.pdf
 translations:
   - lang: EN
     url: https://fd.tllester.info/pdfs/art-spaces-hosting-activism-en.pdf
