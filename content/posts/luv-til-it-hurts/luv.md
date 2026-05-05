@@ -1,7 +1,6 @@
 ---
 title: Luv 'til it Hurts
 order: 1
-image:
-  src: /uploads/luv-megaphone.png
+image: /uploads/luv-megaphone.png
 asset: https://luvhurts.co/
 ---

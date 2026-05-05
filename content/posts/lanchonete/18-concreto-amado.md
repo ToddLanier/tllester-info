@@ -1,9 +1,6 @@
 ---
 title: Concreto Amado (Habitacidade working group)
 order: 18
-image:
-  src: /uploads/lanch-18-concreto-amado-thumb.jpg
-file:
-  src: /uploads/lanch-18-concreto-amado.jpg
-  label: Flier
+image: /uploads/lanch-18-concreto-amado-thumb.jpg
+asset: /uploads/lanch-18-concreto-amado.jpg
 ---

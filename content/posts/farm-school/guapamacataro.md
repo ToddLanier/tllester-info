@@ -1,10 +1,8 @@
 ---
 title: Guapamacataro
 order: 5
-file:
-  src: https://guapamacataro.org/team/
-image:
-  src: /uploads/guapamacataro-thumb.png
+image: /uploads/guapamacataro-thumb.png
+asset: https://guapamacataro.org/team/
 ---
 
 TODO: image + link pending. Spec lists only title.

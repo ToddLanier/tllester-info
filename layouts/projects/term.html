@@ -5,7 +5,7 @@
 <div class="project-content">
 
     <div class="md-content">{{ .Content }}</div>
-    
+
     <div class="project-boxes">
         {{ $projectName := path.Base .RelPermalink }}
         {{ $sectionDir := printf "posts/%s/" $projectName }}
@@ -13,35 +13,23 @@
         <!-- DEBUG: projectName={{ $projectName }} sectionDir={{ $sectionDir }} count={{ len $sectionPages }} -->
         {{ $filtered := where $sectionPages "Params.private" "!=" true }}
         {{ range sort $filtered "Params.order" "asc" }}
-            {{ $pageURL := .Permalink }}
-            {{ if .Params.translations }}
-                    {{ $isGrid := eq (len .Params.translations) 4 }}
-                    <div class="project-box project-box--multilingual" style="background-image: url('{{ .Params.image.src }}');" title="{{ .Title }}">
+            {{ if .Params.buttons }}
+                    {{ $isGrid := eq (len .Params.buttons) 4 }}
+                    <div class="project-box project-box--multilingual" style="background-image: url('{{ .Params.image }}');" title="{{ .Title }}">
                         <div class="project-box__overlay{{ if $isGrid }} project-box__overlay--grid{{ end }}">
-                            {{ range .Params.translations }}
-                            <a class="project-box__lang" href="{{ .url }}"{{ partial "link-attrs.html" .url | safeHTMLAttr }}>
-                                {{ .lang }}
+                            {{ range .Params.buttons }}
+                            <a class="project-box__lang" href="{{ .asset }}"{{ partial "link-attrs.html" .asset | safeHTMLAttr }}>
+                                {{ .title }}
                             </a>
                             {{ end }}
                         </div>
                     </div>
             {{ else if .Params.asset }}
-                {{ $pageURL = .Params.asset }}
-                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}"{{ partial "link-attrs.html" $pageURL | safeHTMLAttr }} title="{{ .Title }}">
+                    <a class="project-box" style="background-image: url('{{ .Params.image }}');" href="{{ .Params.asset }}"{{ partial "link-attrs.html" .Params.asset | safeHTMLAttr }} title="{{ .Title }}">
                         <div></div>
                     </a>
-            {{ else if .Params.file.src }}
-                {{ $pageURL = .Params.file.src }}
-                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}"{{ partial "link-attrs.html" $pageURL | safeHTMLAttr }} title="{{ .Title }}">
-                             <div></div>
-                    </a>
-            {{ else if .Params.file.image }}
-                {{ $pageURL = .Params.file.image }}
-                    <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ $pageURL }}"{{ partial "link-attrs.html" $pageURL | safeHTMLAttr }} title="{{ .Title }}">
-                            <div></div>
-                    </a>
             {{ else }}
-                <a class="project-box" style="background-image: url('{{ .Params.image.src }}');" href="{{ .Permalink }}" title="{{ .Title }}">
+                <a class="project-box" style="background-image: url('{{ .Params.image }}');" href="{{ .Permalink }}" title="{{ .Title }}">
                          <div></div>
                 </a>
             {{ end }}

@@ -1,7 +1,6 @@
 ---
 title: f/s 
 order: 1
-image:
-  src: /uploads/fs-loop.png
+image: /uploads/fs-loop.png
 asset:
 ---

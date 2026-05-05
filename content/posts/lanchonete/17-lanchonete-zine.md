@@ -1,7 +1,6 @@
 ---
 title: 'TIJUANA book fair Lanchonete zine'
 order: 17
-image:
-  src: /uploads/17-lanchonete-zine.png
+image: /uploads/17-lanchonete-zine.png
 asset: https://lanchonete.tllester.info/lanchonete/pdfs/Final_Menu_Zine_no1.pdf
 ---

@@ -1,5 +1,5 @@
 {{- /* Renders a post link, resolving URL priority: asset > file.src > file.image > permalink.
-     Context: a post Page. */ -}}
+     Context: a post Page. file.* fallbacks retained for un-migrated root posts. */ -}}
 {{ if .Params.asset }}
 <a href="{{ .Params.asset }}"{{ partial "link-attrs.html" .Params.asset | safeHTMLAttr }}>{{ .Title }}</a>
 {{ else if .Params.file.src }}

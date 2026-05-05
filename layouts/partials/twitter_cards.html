@@ -1,9 +1,13 @@
-{{- with .Params.image.src }}
+{{- with .Params.image }}
+{{ $imgPath := "" }}
+{{ if reflect.IsMap . }}{{ $imgPath = .src }}{{ else }}{{ $imgPath = . }}{{ end }}
+{{ with $imgPath }}
 {{ $image := $.Resources.GetMatch . }}
 {{ with $image }}
 {{ $thumb := .Resize "400x" }}
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="{{ $thumb.Permalink }}">
+{{ end }}
 {{ end }}
 {{ end }}
 

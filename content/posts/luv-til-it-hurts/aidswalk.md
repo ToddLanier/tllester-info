@@ -2,7 +2,6 @@
 title: AIDs Walk
 order: 13
 image:
-  src: /uploads/
-asset: 
+asset:
 draft: true
 ---

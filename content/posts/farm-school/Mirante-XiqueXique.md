@@ -1,10 +1,8 @@
 ---
 title: Mirante XiqueXique
 order: 6
-file:
-  src: https://mirantexiquexique.org/todd/
-image:
-  src: /uploads/mirante-xique-xique-thumb.png
+image: /uploads/mirante-xique-xique-thumb.png
+asset: https://mirantexiquexique.org/todd/
 ---
 
 TODO: image + link pending. Spec lists only title.

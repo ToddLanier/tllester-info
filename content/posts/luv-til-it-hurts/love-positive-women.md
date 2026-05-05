@@ -1,7 +1,6 @@
 ---
 title: Love Positive Women
 order: 9
-image:
-  src: /uploads/luv-love-positive-women.jpg
+image: /uploads/luv-love-positive-women.jpg
 asset: https://luvhurts.co/page-ii/
 ---

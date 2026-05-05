@@ -1,7 +1,6 @@
 ---
 title: Lanchonete chapter 
 order: 14
-image:
-  src: /uploads/contemporary-perspectives-art-international-development.jpg
+image: /uploads/contemporary-perspectives-art-international-development.jpg
 asset: https://lanchonete.tllester.info/lanchonete/pdfs/Contemporary-Perspectives-on-Art-and-International-Development-Chapter-8-Polly-Stupples-Katerina-Teaiwa.pdf
 ---
