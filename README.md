@@ -20,12 +20,6 @@ hugo --gc --minify
 
 Output in `public/`.
 
-## Pagefind Search Index
-
-```bash
-npm_config_yes=true npx pagefind --site "public" --output-subdir ../static/pagefind
-```
-
 ## Deploy
 
 Push to `main`. Netlify builds via `hugo --gc --minify --baseURL "${baseURL}"` (see `netlify.toml`).
