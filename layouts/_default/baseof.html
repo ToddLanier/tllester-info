@@ -30,7 +30,18 @@
     {{ template "_internal/google_analytics.html" . }}
     {{- partial "head.html" . -}}
 </head>
-<body>
+{{- $sitePath := strings.TrimRight "/" (relURL "") -}}
+{{- $segs := split (strings.TrimPrefix $sitePath .RelPermalink) "/" -}}
+{{- $sec := index $segs 1 -}}
+{{- $slug := index $segs 2 -}}
+{{- $modes := dict "freedimensional" "fd-mode" "el-mejor-karate" "emk-mode" "lanchonete" "lanch-mode" "luv-til-it-hurts" "luv-mode" "farm-school" "fs-mode" "my-art-world" "maw-mode" -}}
+{{- $bodyClass := "" -}}
+{{- if .IsHome -}}{{- $bodyClass = "home" -}}
+{{- else if eq $sec "info" -}}{{- $bodyClass = "info-mode" -}}
+{{- else if eq $sec "contact" -}}{{- $bodyClass = "contact-mode" -}}
+{{- else if or (eq $sec "projects") (eq $sec "posts") -}}{{- with index $modes $slug -}}{{- $bodyClass = . -}}{{- end -}}
+{{- end -}}
+<body{{ with $bodyClass }} class="{{ . }}"{{ end }}>
     <div class="menu-overlay"></div>
     {{- partial "header.html" . -}}
         <main>
@@ -41,34 +52,7 @@
 </body>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const basePath = {{ strings.TrimRight "/" (urls.Parse .Site.BaseURL).Path | jsonify }};
-            const p = (basePath && window.location.pathname.startsWith(basePath))
-                ? (window.location.pathname.slice(basePath.length) || '/')
-                : window.location.pathname;
             const bodyElement = document.body;
-
-            // Extract the project slug from paths like /projects/slug/ or /posts/slug/anything/
-            const projectMatch = p.match(/^\/(projects|posts)\/([^/]+)\//);
-            const projectSlug = projectMatch ? projectMatch[2] : null;
-
-            const projectModes = {
-                'el-mejor-karate': 'emk-mode',
-                'freedimensional': 'fd-mode',
-                'lanchonete': 'lanch-mode',
-                'luv-til-it-hurts': 'luv-mode',
-                'farm-school': 'fs-mode',
-                'my-art-world': 'maw-mode'
-            };
-
-            if (p === '/') {
-                bodyElement.classList.add('home');
-            } else if (p === '/info/') {
-                bodyElement.classList.add('info-mode');
-            } else if (p === '/contact/') {
-                bodyElement.classList.add('contact-mode');
-            } else if (projectSlug && projectModes[projectSlug]) {
-                bodyElement.classList.add(projectModes[projectSlug]);
-            }
 
             // Hamburger menu toggle
             var toggle = document.querySelector('.menu-toggle');
