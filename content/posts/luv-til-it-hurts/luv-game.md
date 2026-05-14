@@ -1,6 +1,6 @@
 ---
-title: luv game
+title: LUV game
 order: 3
 image: /uploads/luv-play-me.png
-asset: https://luvhurts.co/play-me/
+asset: https://luvblog.tllester.info/play-me/
 ---

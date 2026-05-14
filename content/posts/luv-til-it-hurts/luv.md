@@ -1,6 +1,6 @@
 ---
-title: Luv 'til it Hurts
+title: Luv 'til it Hurts Blog
 order: 1
 image: /uploads/luv-megaphone.png
-asset: https://luvhurts.co/
+asset: https://luvblog.tllester.info/
 ---
