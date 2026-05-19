@@ -1,5 +1,5 @@
 ---
-title: Partage
+title: "pARTage exhibition: Global Warming (Mauritius)"
 order: 7
 image: /uploads/fs-7-partage.jpg
 buttons:
