@@ -6,5 +6,5 @@ buttons:
   - title: Berlin meeting
     asset: https://district-berlin.com/en/on-illness-resistance-and-modes-of-collective-health-care-3/  
   - title: Video Conference
-    asset: https://drive.google.com/drive/folders/1vSHuVbaPmzjhHpoH2MFaAwCAK4l4yhY3
+    asset: https://drive.google.com/file/d/17dumf5tN1TcyRM3PraQXDlqEBpdR8qUJ/view
 ---
