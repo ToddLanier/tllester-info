@@ -15,12 +15,28 @@
         {{ range sort $filtered "Params.order" "asc" }}
             {{ if .Params.buttons }}
                     {{ $isGrid := eq (len .Params.buttons) 4 }}
+                    {{ $isSplitRight := eq (len .Params.buttons) 3 }}
                     <div class="project-box project-box--multilingual" style="background-image: url('{{ .Params.image | relURL }}');" title="{{ .Title }}">
-                        <div class="project-box__overlay{{ if $isGrid }} project-box__overlay--grid{{ end }}">
-                            {{ range .Params.buttons }}
-                            <a class="project-box__lang" href="{{ .asset }}"{{ partial "link-attrs.html" .asset | safeHTMLAttr }}>
-                                {{ .title }}
-                            </a>
+                        <div class="project-box__overlay{{ if $isGrid }} project-box__overlay--grid{{ end }}{{ if $isSplitRight }} project-box__overlay--split-right{{ end }}">
+                            {{ if $isSplitRight }}
+                                <div class="project-box__stack">
+                                    {{ range first 2 .Params.buttons }}
+                                    <a class="project-box__lang" href="{{ .asset }}"{{ partial "link-attrs.html" .asset | safeHTMLAttr }}>
+                                        {{ .title }}
+                                    </a>
+                                    {{ end }}
+                                </div>
+                                {{ with index .Params.buttons 2 }}
+                                <a class="project-box__lang" href="{{ .asset }}"{{ partial "link-attrs.html" .asset | safeHTMLAttr }}>
+                                    {{ .title }}
+                                </a>
+                                {{ end }}
+                            {{ else }}
+                                {{ range .Params.buttons }}
+                                <a class="project-box__lang" href="{{ .asset }}"{{ partial "link-attrs.html" .asset | safeHTMLAttr }}>
+                                    {{ .title }}
+                                </a>
+                                {{ end }}
                             {{ end }}
                         </div>
                     </div>

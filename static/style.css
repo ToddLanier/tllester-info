@@ -280,6 +280,28 @@ menu .list-project a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* 3-button layout: left 2 stacked vertically, right 1 */
+.project-box__stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-box__stack .project-box__lang {
+    border-right: none;
+}
+
+.project-box__stack .project-box__lang:first-child {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-box__overlay--split-right > .project-box__lang {
+    font-size: 0.75em;
+    padding: 0.5em;
+}
+
 .content ol li {
     margin-bottom: .5em;
 }
@@ -568,6 +590,16 @@ body.luv-mode menu {
     border: 1px solid;
 }
 
+body.luv-mode .project-box__lang {
+    background-color: rgb(207 46 46 / 60%);
+    color: white;
+}
+
+body.luv-mode .project-box__lang:hover {
+    background-color: rgb(207 46 46 / 80%);
+    color: white;
+}
+
 /*  FARM SCHOOL */
 body.fs-mode {
     background-color: #4ca285;
@@ -575,6 +607,16 @@ body.fs-mode {
 
 body.fs-mode menu {
     border: 1px solid;
+}
+
+body.fs-mode .project-box__lang {
+    background-color: rgb(76 162 133 / 60%);
+    color: white;
+}
+
+body.fs-mode .project-box__lang:hover {
+    background-color: rgb(76 162 133 / 80%);
+    color: white;
 }
 
 /* MY ART WORLD */
@@ -586,6 +628,16 @@ body.maw-mode {
 
 body.maw-mode menu {
     border: 1px solid;
+}
+
+body.maw-mode .project-box__lang {
+    background-color: rgb(74 180 231 / 60%);
+    color: rgb(45, 45, 45);
+}
+
+body.maw-mode .project-box__lang:hover {
+    background-color: rgb(74 180 231 / 80%);
+    color: rgb(45, 45, 45);
 }
 
 body.maw-mode .project-content {
@@ -601,6 +653,16 @@ body.emk-mode {
     background-position-y: -10px;
     background-position-x: -128px;
     background-color: #2d2d2d;
+    color: #f5f5f5;
+}
+
+body.emk-mode .project-box__lang {
+    background-color: rgb(45 45 45 / 60%);
+    color: #f5f5f5;
+}
+
+body.emk-mode .project-box__lang:hover {
+    background-color: rgb(45 45 45 / 80%);
     color: #f5f5f5;
 }
 
