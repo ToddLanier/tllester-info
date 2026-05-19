@@ -652,7 +652,7 @@ body.emk-mode .md-content {
 }
 
 body.emk-mode .project-box {
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(255, 255, 255);
     /* margin: 0; */
     width: 240px;
     margin-bottom: 1.5em;
